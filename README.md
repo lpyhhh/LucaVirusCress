@@ -1,7 +1,3 @@
-This is a solid README structure. To make it more professional and aligned with top-tier GitHub repositories (which will look great for your PhD applications), I have optimized the content for clarity, technical depth, and visual hierarchy.
-
------
-
 # LucaVirusCress: A Deep Learning Framework for CRESS Virus Identification
 
 [](https://huggingface.co/Daxiao123/LucaVirusCress)
