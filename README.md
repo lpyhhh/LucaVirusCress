@@ -1,5 +1,6 @@
 # LucaVirusCress: A Deep Learning Framework for CRESS Virus Identification
 ## lpy-dream
+### lpy-dream-dev开发功能
 [](https://huggingface.co/Daxiao123/LucaVirusCress)
 [](https://www.google.com/search?q=https://opensource.org/licenses/MIT)
 [](https://www.google.com/search?q=https://www.python.org/downloads/)
