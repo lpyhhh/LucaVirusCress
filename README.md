@@ -1,6 +1,5 @@
 # LucaVirusCress: A Deep Learning Framework for CRESS Virus Identification
-## lpy-dream
-### lpy-dream-dev开发功能
+
 [](https://huggingface.co/Daxiao123/LucaVirusCress)
 [](https://www.google.com/search?q=https://opensource.org/licenses/MIT)
 [](https://www.google.com/search?q=https://www.python.org/downloads/)
@@ -119,3 +118,7 @@ The pre-trained weights and configuration are hosted on Hugging Face:
 ## 📜 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
+
+-----
+
+thanks for everyone!
