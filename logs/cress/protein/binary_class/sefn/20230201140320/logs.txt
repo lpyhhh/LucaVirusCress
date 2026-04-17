@@ -1,0 +1,180 @@
+Inputs:
+Input Name List: protein,seq,embedding
+##################################################
+Model Config:
+ BertConfig {
+  "activate_func": "tanh",
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "directionality": "bidi",
+  "embedding_fc_size": [
+    128
+  ],
+  "embedding_input_size": 2560,
+  "embedding_pooling_type": "value_attention",
+  "embedding_weight": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 128,
+  "initializer_range": 0.02,
+  "intermediate_size": 512,
+  "layer_norm_eps": 1e-12,
+  "loss_reduction": "mean",
+  "max_position_embeddings": 2048,
+  "model_type": "bert",
+  "no_token_type_embeddings": true,
+  "num_attention_heads": 4,
+  "num_hidden_layers": 4,
+  "pad_token_id": 0,
+  "pooler_fc_size": 128,
+  "pooler_num_attention_heads": 4,
+  "pooler_num_fc_layers": 1,
+  "pooler_size_per_head": 128,
+  "pooler_type": "first_token_transform",
+  "pos_weight": 40,
+  "position_embedding_type": "absolute",
+  "seq_fc_size": [
+    128
+  ],
+  "seq_weight": null,
+  "transformers_version": "4.26.0",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 19983
+}
+
+##################################################
+Mode Architecture:
+ SequenceAndStructureFusionNetwork(
+  (seq_encoder): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(19983, 128, padding_idx=0)
+      (position_embeddings): Embedding(2048, 128)
+      (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=128, out_features=128, bias=True)
+              (key): Linear(in_features=128, out_features=128, bias=True)
+              (value): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=128, out_features=128, bias=True)
+              (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=128, out_features=512, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=128, out_features=128, bias=True)
+              (key): Linear(in_features=128, out_features=128, bias=True)
+              (value): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=128, out_features=128, bias=True)
+              (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=128, out_features=512, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=128, out_features=128, bias=True)
+              (key): Linear(in_features=128, out_features=128, bias=True)
+              (value): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=128, out_features=128, bias=True)
+              (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=128, out_features=512, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=128, out_features=128, bias=True)
+              (key): Linear(in_features=128, out_features=128, bias=True)
+              (value): Linear(in_features=128, out_features=128, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=128, out_features=128, bias=True)
+              (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=128, out_features=512, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=512, out_features=128, bias=True)
+            (LayerNorm): LayerNorm((128,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=128, out_features=128, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (seq_pooler): GlobalMaskValueAttentionPooling1D (128 -> 128)
+  (seq_linear): ModuleList(
+    (0): Linear(in_features=128, out_features=128, bias=True)
+    (1): Tanh()
+  )
+  (embedding_pooler): GlobalMaskValueAttentionPooling1D (2560 -> 2560)
+  (embedding_linear): ModuleList(
+    (0): Linear(in_features=2560, out_features=128, bias=True)
+    (1): Tanh()
+  )
+  (dropout): Dropout(p=0.1, inplace=False)
+  (classifier): Linear(in_features=256, out_features=1, bias=True)
+  (output): Sigmoid()
+  (loss_fct): BCEWithLogitsLoss()
+)
+##################################################
+{"adam_epsilon": 1e-08, "asl_gamma_neg": 4, "asl_gamma_pos": 1, "cache_dir": "", "cmap_thresh": 10.0, "cmap_type": null, "codes_file": "../subword/cress/protein/binary_class/protein_codes_rdrp_20000.txt", "config_path": "../config/rdrp_40_extend/protein/binary_class/sefn_config.json", "data_dir": "../dataset/rdrp_40_extend/protein/binary_class", "dataset_name": "rdrp_40_extend", "dataset_type": "protein", "do_eval": true, "do_lower_case": false, "do_predict": true, "do_train": true, "embedding_input_size": 2560, "embedding_max_length": 2048, "embedding_pooling_type": "value_attention", "embedding_type": "matrix", "eval_all_checkpoints": false, "evaluate_during_training": true, "filename_pattern": "{}_with_pdb_emb.csv", "focal_loss_alpha": 0.7, "focal_loss_gamma": 2.0, "focal_loss_reduce": false, "fp16": false, "fp16_opt_level": "O1", "gradient_accumulation_steps": 1, "has_embedding_encoder": true, "has_seq_encoder": true, "has_struct_encoder": false, "input_mode": "single", "label_filepath": "../dataset/rdrp_40_extend/protein/binary_class/label.txt", "label_type": "rdrp", "learning_rate": 0.0001, "local_rank": -1, "log_dir": "../logs/rdrp_40_extend/protein/binary_class/sefn/20230201140320", "logging_steps": 20000, "loss_type": "bce", "max_grad_norm": 1.0, "max_metric_type": "f1", "max_steps": -1, "model_type": "sefn", "multi_tfrecords": false, "n_gpu": 1, "no_cuda": false, "no_position_embeddings": false, "no_token_type_embeddings": true, "num_train_epochs": 50, "output_dir": "../models/rdrp_40_extend/protein/binary_class/sefn/20230201140320", "output_mode": "binary_class", "overwrite_cache": false, "overwrite_output_dir": true, "per_gpu_eval_batch_size": 16, "per_gpu_train_batch_size": 16, "pos_weight": 40, "save_steps": 20000, "seed": 42, "separate_file": false, "seq_max_length": 2048, "seq_pooling_type": "value_attention", "seq_vocab_path": "../vocab/rdrp_40_extend/protein/binary_class/subword_vocab_20000.txt", "shuffle_queue_size": 15000, "sigmoid": true, "struct_max_length": 2048, "struct_pooling_type": null, "struct_vocab_path": null, "subword": true, "task_type": "binary_class", "tb_log_dir": "../tb-logs/rdrp_40_extend/protein/binary_class/sefn/20230201140320", "tfrecords": true, "trunc_type": "right", "warmup_steps": 0, "weight_decay": 0.0}
+##################################################
+num labels: 2
+##################################################
